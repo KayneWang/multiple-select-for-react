@@ -10,11 +10,11 @@ class MultipleSelect extends React.PureComponent {
     items: {}
   };
   static propTypes = {
-    style: PropTypes.object,
-    placeholder: PropTypes.string,
-    items: PropTypes.object, // { key: title }
+    value: PropTypes.object,
     handleSearch: PropTypes.func.isRequired,
-    value: PropTypes.object
+    items: PropTypes.object, // { key: title }
+    style: PropTypes.object,
+    placeholder: PropTypes.string
   };
   rcSelect = undefined;
   curSelectedKey = undefined; // 当前选中的数据 key
@@ -150,7 +150,7 @@ class MultipleSelect extends React.PureComponent {
                 disabled
                 style={{ lineHeight: '30px', height: '30px' }}
               >
-                选择资源属性进行过滤
+                {placeholder}
               </Menu.Item>
               {Object.keys(items).map(value => (
                 <Menu.Item
